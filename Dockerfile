@@ -1,4 +1,4 @@
-FROM ruby:3.3 AS development
+FROM ruby:3.4 AS development
 
 # Check https://rubygems.org/gems/bundler/versions for the latest version.
 ARG UNAME=app
