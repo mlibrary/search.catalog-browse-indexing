@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require "pry"
-require "byebug"
 require "webmock/rspec"
 require "httpx/adapters/webmock"
 require "alma_rest_client"
 require "simplecov"
 require "sequel"
+require "debug"
 SimpleCov.start
 ENV["APP_ENV"] = "test"
 require "browse"
@@ -50,6 +49,7 @@ AuthorityBrowse::DB::Names.recreate_all_tables!
 
 RSpec.configure do |config|
   include AlmaRestClient::Test::Helpers
+
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 

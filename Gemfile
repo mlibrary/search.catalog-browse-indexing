@@ -14,20 +14,19 @@ gem "semantic_logger"
 gem "thor"
 gem "marc"
 gem "solr_cloud-connection", ">= 0.4.0"
-gem "alma_rest_client", github: "mlibrary/alma_rest_client", tag: "v2.0.0"
+gem "alma_rest_client", github: "mlibrary/alma_rest_client", tag: "alma_rest_client/v2.2.0"
 
-gem "sqlite3", "~> 1.4", platforms: :mri
-gem "jdbc-sqlite3", "~> 3.28", platforms: :jruby
+gem "sqlite3", force_ruby_platform: true
 
 gem "milemarker", "~> 1.0"
 
 gem "ffi-icu"
+gem "ostruct"
 
 gem "dotenv"
 gem "rspec", "~> 3.11"
 gem "simplecov"
 gem "webmock"
 gem "standardrb"
-gem "pry", "~> 0.14", require: false
-gem "byebug"
+gem "debug"
 gem "ruby-prof"

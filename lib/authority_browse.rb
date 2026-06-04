@@ -3,7 +3,6 @@
 require "milemarker"
 require "zinzout"
 require "logger"
-require "byebug"
 require "services"
 require "concurrent"
 require "alma_rest_client"
