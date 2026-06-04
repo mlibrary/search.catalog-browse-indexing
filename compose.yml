@@ -1,8 +1,21 @@
+x-condition-healthy: &healthy
+  condition: service_healthy
+x-healthcheck-defaults: &healthcheck-defaults
+  interval: 30s
+  timeout: 10s
+  start_period: 30s
+  retries: 5
 services:
   app:
-    build: 
+    build:
       context: .
       target: development
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    depends_on:
+      database: *healthy
+      solr: *healthy
     platform: linux/amd64
     volumes:
       - .:/app
@@ -10,12 +23,14 @@ services:
     env_file:
       - env.development
       - .env
-    command: "tail -f /dev/null"
-
+    command: "echo 'hello world'"
   database:
     image: mariadb
     volumes:
       - database:/var/lib/mysql
+    healthcheck:
+      !!merge <<: *healthcheck-defaults
+      test: ["CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized"]
     ports:
       - 3306:3306
     environment:
@@ -23,25 +38,28 @@ services:
       - MARIADB_USER=user
       - MARIADB_PASSWORD=password
       - MARIADB_DATABASE=database
-
   solr:
     build: solr/.
+    depends_on:
+      zoo: *healthy
+    healthcheck:
+      !!merge <<: *healthcheck-defaults
+      test: ["CMD-SHELL", "curl -s -f -u solr:SolrRocks 'http://localhost:8983/solr/admin/collections?action=CLUSTERSTATUS'"]
     ports:
       - "8983:8983"
     environment:
       - ZK_HOST=zoo:2181
-    depends_on:
-      - zoo
     command: solr-foreground
-
   zoo:
     image: zookeeper
+    healthcheck:
+      !!merge <<: *healthcheck-defaults
+      test: ["CMD", "nc", "-z", "-w", "2", "localhost", "2181"] # Check if ZooKeeper is listening on port 2181
     ports:
       - 2181:2181
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181
-        
 volumes:
   gem_cache:
   database:
