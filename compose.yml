@@ -19,7 +19,6 @@ services:
     platform: linux/amd64
     volumes:
       - .:/app
-      - gem_cache:/gems
     env_file:
       - env.development
       - .env
@@ -61,5 +60,4 @@ services:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=0.0.0.0:2888:3888;2181
 volumes:
-  gem_cache:
   database:
