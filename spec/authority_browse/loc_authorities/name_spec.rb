@@ -92,4 +92,17 @@ RSpec.describe AuthorityBrowse::LocAuthorities::Name do
       end
     end
   end
+  context "entry with array-style prefLabel" do
+    before(:each) do
+      @data = JSON.parse(fixture("loc_authorities/pullan.json"))
+    end
+    subject do
+      described_class.new(@data)
+    end
+    context "#label" do
+      it "returns the literalForm" do
+        expect(subject.label).to eq("Pullan, Wendy, 1950-")
+      end
+    end
+  end
 end
