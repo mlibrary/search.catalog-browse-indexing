@@ -1,15 +1,13 @@
 name: Build unstable image
-
 on:
   workflow_dispatch:
     inputs:
       tag:
         description: tag
         required: true
-
 jobs:
   build-unstable:
-    uses: mlibrary/platform-engineering-workflows/.github/workflows/build-unstable.yml@v1
+    uses: mlibrary/platform-engineering-workflows/.github/workflows/build-unstable.yml@2012bb6a322ad02c45c01372de2f5e2e3d7329ac #v1.6.7
     with:
       image_name: ${{ vars.IMAGE_NAME }}
       tag: ${{ github.event.inputs.tag }}

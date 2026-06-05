@@ -1,7 +1,5 @@
 name: Run Tests
-
 on: push
-
 jobs:
   # Run tests
   test:
@@ -16,24 +14,21 @@ jobs:
           MARIADB_ROOT_PASSWORD: password
         ports: ["3306:3306"]
         options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Create .env file
-        run:  cat env.* > .env
+        run: cat env.* > .env
       - name: Load .env file
-        uses: xom9ikk/dotenv@v2
+        uses: xom9ikk/dotenv@d0a56edc74279820eabbe34477511327e710d0de # v2.4.0
       - name: wait for mysql
-        run: |
-          while ! mysqladmin ping -h"127.0.0.1" -P"3306" --silent; do
-            sleep 1
-          done   
-      - name: Set up Ruby 3.2
-        uses: ruby/setup-ruby@v1
+        run: "while ! mysqladmin ping -h\"127.0.0.1\" -P\"3306\" --silent; do\n  sleep 1\ndone   \n"
+      - name: Set up Ruby 4.0
+        uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f # v1.310.0
         with:
-          ruby-version: '3.2'
+          ruby-version: '4.0'
           bundler-cache: true
       - name: run tests but not the ones that touch solrcloud
         run: bundle exec rspec --tag ~solrcloud
-        env: 
+        env:
           GHA_TEST: "true"
