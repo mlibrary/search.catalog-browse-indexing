@@ -1,0 +1,80 @@
+{
+  "@context": "http://id.loc.gov/authorities/names/context.json",
+  "@graph": [
+    {
+      "@id": "http://id.loc.gov/authorities/names/n00000124",
+      "@type": "skos:Concept",
+      "skos:altLabel": {
+        "@language": "zxx-Hebr",
+        "@value": "פולן, ונדי, ‪1950-‬"
+      },
+      "skos:changeNote": [
+        {
+          "@id": "_:n073ce644b0b545ea9d4da338faf467e3b1"
+        },
+        {
+          "@id": "_:n073ce644b0b545ea9d4da338faf467e3b2"
+        }
+      ],
+      "skos:editorialNote": [
+        "[Machine-derived non-Latin script reference project.]",
+        "[Non-Latin script reference not evaluated.]"
+      ],
+      "skos:exactMatch": {
+        "@id": "http://viaf.org/en/viaf/LC%7Cn%20%2000000124"
+      },
+      "skos:inScheme": {
+        "@id": "http://id.loc.gov/authorities/names"
+      },
+      "skos:prefLabel": [
+        "Pullan, Wendy, 1950-",
+        {
+          "@language": "zxx-Hebr",
+          "@value": "פולן, ונדי, ‪1950-‬"
+        }
+      ],
+      "skosxl:altLabel": {
+        "@id": "_:n073ce644b0b545ea9d4da338faf467e3b3"
+      }
+    },
+    {
+      "@id": "_:n073ce644b0b545ea9d4da338faf467e3b1",
+      "@type": "cs:ChangeSet",
+      "cs:changeReason": "new",
+      "cs:createdDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2000-01-13T00:00:00"
+      },
+      "cs:creatorName": {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      },
+      "cs:subjectOfChange": {
+        "@id": "http://id.loc.gov/authorities/names/n00000124"
+      }
+    },
+    {
+      "@id": "_:n073ce644b0b545ea9d4da338faf467e3b2",
+      "@type": "cs:ChangeSet",
+      "cs:changeReason": "revised",
+      "cs:createdDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2025-08-05T02:34:40"
+      },
+      "cs:creatorName": {
+        "@id": "http://id.loc.gov/vocabulary/organizations/dlc"
+      },
+      "cs:subjectOfChange": {
+        "@id": "http://id.loc.gov/authorities/names/n00000124"
+      }
+    },
+    {
+      "@id": "_:n073ce644b0b545ea9d4da338faf467e3b3",
+      "@type": "skosxl:Label",
+      "skosxl:literalForm": {
+        "@language": "zxx-Hebr",
+        "@value": "פולן, ונדי, ‪1950-‬"
+      }
+    }
+  ],
+  "@id": "/authorities/names/n00000124"
+}

@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/mlibrary/alma_rest_client.git
-  revision: 9606225d82480b6d1568902813ae9018dd8c1acc
-  tag: v2.0.0
+  revision: f94276a6e83d1526f7ec91c66aad1cee8b80f97d
+  tag: alma_rest_client/v2.2.0
   specs:
-    alma_rest_client (2.0.0)
-      activesupport (~> 7.0, >= 4.2)
+    alma_rest_client (2.2.0)
+      activesupport (~> 8.0)
       faraday
       faraday-retry
       httpx
@@ -13,168 +13,208 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.1.3.4)
+    activesupport (8.1.3)
       base64
       bigdecimal
-      concurrent-ruby (~> 1.0, >= 1.0.2)
+      concurrent-ruby (~> 1.0, >= 1.3.1)
       connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
+      json
+      logger (>= 1.4.2)
       minitest (>= 5.1)
-      mutex_m
-      tzinfo (~> 2.0)
-    addressable (2.8.6)
-      public_suffix (>= 2.0.2, < 6.0)
-    ast (2.4.2)
-    base64 (0.2.0)
-    bigdecimal (3.1.4)
-    byebug (11.1.3)
+      securerandom (>= 0.3)
+      tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
+    ast (2.4.3)
+    base64 (0.3.0)
+    bigdecimal (3.3.1)
     canister (0.9.2)
-    coderay (1.1.3)
-    concurrent-ruby (1.2.2)
-    connection_pool (2.4.1)
-    crack (0.4.5)
+    concurrent-ruby (1.3.6)
+    connection_pool (3.0.2)
+    crack (1.0.1)
+      bigdecimal
       rexml
-    diff-lcs (1.5.0)
-    docile (1.4.0)
-    dotenv (2.8.1)
-    drb (2.2.1)
-    faraday (2.7.12)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-follow_redirects (0.3.0)
+    date (3.5.1)
+    debug (1.11.1)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
+    diff-lcs (1.6.2)
+    docile (1.4.1)
+    dotenv (3.2.0)
+    drb (2.2.3)
+    erb (6.0.4)
+    faraday (2.14.2)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-follow_redirects (0.5.0)
       faraday (>= 1, < 3)
-    faraday-net_http (3.0.2)
-    faraday-retry (2.2.1)
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
+    faraday-retry (2.4.0)
       faraday (~> 2.0)
-    ffi (1.16.3)
-    ffi-icu (0.5.2)
+    ffi (1.17.4-x86_64-linux-gnu)
+    ffi-icu (0.6.0)
+      bigdecimal (~> 3.1)
       ffi (~> 1.0, >= 1.0.9)
-    hashdiff (1.0.1)
-    http-2-next (1.0.1)
-    httpx (1.1.5)
-      http-2-next (>= 1.0.1)
-    i18n (1.14.5)
+      stringio (~> 3.0)
+    hashdiff (1.2.1)
+    http-2 (1.1.3)
+    httpx (1.7.8)
+      http-2 (>= 1.1.3)
+    i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    json (2.7.1)
-    language_server-protocol (3.17.0.3)
+    io-console (0.8.2)
+    irb (1.18.0)
+      pp (>= 0.6.0)
+      prism (>= 1.3.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
+    json (2.19.8)
+    language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
-    marc (1.2.0)
+    logger (1.7.0)
+    marc (1.4.0)
+      nokogiri (~> 1.0)
       rexml
-      scrub_rb (>= 1.0.1, < 2)
-      unf
-    method_source (1.0.0)
-    milemarker (1.0.0)
-    minitest (5.24.1)
-    mutex_m (0.2.0)
-    mysql2 (0.5.5)
-    parallel (1.23.0)
-    parser (3.2.2.4)
+    milemarker (1.0.2)
+      logger
+    mini_portile2 (2.8.9)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
+    mysql2 (0.5.7)
+      bigdecimal
+    net-http (0.9.1)
+      uri (>= 0.11.1)
+    nokogiri (1.19.3-x86_64-linux-gnu)
+      racc (~> 1.4)
+    ostruct (0.6.3)
+    parallel (1.28.0)
+    parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
-    pry (0.14.2)
-      coderay (~> 1.1)
-      method_source (~> 1.0)
-    public_suffix (5.0.4)
-    racc (1.7.3)
+    pp (0.6.3)
+      prettyprint
+    prettyprint (0.2.0)
+    prism (1.9.0)
+    psych (5.4.0)
+      date
+      stringio
+    public_suffix (7.0.5)
+    racc (1.8.1)
     rainbow (3.1.1)
-    regexp_parser (2.8.3)
-    rexml (3.2.6)
-    rspec (3.12.0)
-      rspec-core (~> 3.12.0)
-      rspec-expectations (~> 3.12.0)
-      rspec-mocks (~> 3.12.0)
-    rspec-core (3.12.2)
-      rspec-support (~> 3.12.0)
-    rspec-expectations (3.12.3)
+    rdoc (7.2.0)
+      erb
+      psych (>= 4.0.0)
+      tsort
+    regexp_parser (2.12.0)
+    reline (0.6.3)
+      io-console (~> 0.5)
+    rexml (3.4.4)
+    rspec (3.13.2)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.6)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.6)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.8)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.12.0)
-    rspec-support (3.12.1)
-    rubocop (1.57.2)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.7)
+    rubocop (1.84.2)
       json (~> 2.3)
-      language_server-protocol (>= 3.17.0)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
       parallel (~> 1.10)
-      parser (>= 3.2.2.4)
+      parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 1.8, < 3.0)
-      rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.28.1, < 2.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.30.0)
-      parser (>= 3.2.1.0)
-    rubocop-performance (1.19.1)
-      rubocop (>= 1.7.0, < 2.0)
-      rubocop-ast (>= 0.4.0)
-    ruby-prof (1.6.3)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.49.1)
+      parser (>= 3.3.7.2)
+      prism (~> 1.7)
+    rubocop-performance (1.26.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.47.1, < 2.0)
+    ruby-prof (2.0.4)
+      base64
+      ostruct
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
-    rubyzip (2.3.2)
-    scrub_rb (1.0.1)
-    semantic_logger (4.15.0)
+    rubyzip (2.4.1)
+    securerandom (0.4.1)
+    semantic_logger (4.18.0)
       concurrent-ruby (~> 1.0)
-    sequel (5.75.0)
+    sequel (5.105.0)
       bigdecimal
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    solr_cloud-connection (0.4.0)
-      faraday (~> 2.7.12)
-      httpx (~> 1.1.5)
-      rubyzip (~> 2.3.0)
-    sqlite3 (1.7.3-x86_64-linux)
-    standard (1.32.1)
+    solr_cloud-connection (0.6.0)
+      faraday (~> 2.0)
+      httpx (~> 1.0)
+      rubyzip (~> 2.0)
+    sqlite3 (2.9.4)
+      mini_portile2 (~> 2.8.0)
+    standard (1.54.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
-      rubocop (~> 1.57.2)
+      rubocop (~> 1.84.0)
       standard-custom (~> 1.0.0)
-      standard-performance (~> 1.2)
+      standard-performance (~> 1.8)
     standard-custom (1.0.2)
       lint_roller (~> 1.0)
       rubocop (~> 1.50)
-    standard-performance (1.2.1)
+    standard-performance (1.9.0)
       lint_roller (~> 1.1)
-      rubocop-performance (~> 1.19.1)
+      rubocop-performance (~> 1.26.0)
     standardrb (1.0.1)
       standard
-    thor (1.3.0)
+    stringio (3.2.0)
+    thor (1.5.0)
+    tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.9.1)
-    unicode-display_width (2.5.0)
-    webmock (3.19.1)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.2.0)
+    uri (1.1.1)
+    webmock (3.26.2)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    zinzout (0.1.1)
+    zinzout (0.1.3)
+      ostruct
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
   alma_rest_client!
-  byebug
   canister
   concurrent-ruby (~> 1.1)
+  debug
   dotenv
   faraday (~> 2.5)
   faraday-follow_redirects
   ffi-icu
   httpx
-  jdbc-sqlite3 (~> 3.28)
   marc
   milemarker (~> 1.0)
   mysql2
-  pry (~> 0.14)
+  ostruct
   rspec (~> 3.11)
   ruby-prof
   rubyzip
@@ -182,11 +222,11 @@ DEPENDENCIES
   sequel (~> 5.60)
   simplecov
   solr_cloud-connection (>= 0.4.0)
-  sqlite3 (~> 1.4)
+  sqlite3
   standardrb
   thor
   webmock
   zinzout (~> 0.1)
 
 BUNDLED WITH
-   2.5.17
+  4.0.13

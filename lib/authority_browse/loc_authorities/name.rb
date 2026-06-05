@@ -4,7 +4,11 @@ module AuthorityBrowse
     class Name < Entry
       # @return [String] Preferred Label
       def label
-        main_component["skos:prefLabel"] || main_component["skosxl:literalForm"]
+        result = main_component["skos:prefLabel"] || main_component["skosxl:literalForm"]
+        if result.is_a?(Array)
+          result = result.first
+        end
+        result
       end
 
       # @return [Array<String>] ids of see also xrefs
