@@ -13,6 +13,7 @@ require "canister"
 require "sequel"
 require "solr_cloud/connection"
 require "semantic_logger"
+require_relative "solr_cloud_connection_monkeypatch"
 
 Services = Canister.new
 
