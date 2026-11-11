@@ -91,7 +91,7 @@ GEM
       uri (>= 0.11.1)
     net-protocol (0.4.0)
       timeout
-    nokogiri (1.19.4-x86_64-linux-gnu)
+    nokogiri (1.19.5-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.3)
     parallel (2.3.0)
